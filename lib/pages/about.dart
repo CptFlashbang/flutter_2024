@@ -16,14 +16,18 @@ class _AboutPageState extends State<AboutPage> {
       appBar: AppBar(
         title: const Text("About"),
       ),
-       body: Container(
-        margin: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[Expanded(child: Image(image: AssetImage('images/grad.jpg')))],
+       body: ListView(
+            padding: const EdgeInsets.all(8),
+            children: <Widget>[
+            Expanded(child: Image(image: AssetImage('images/cat1.jpg'))),
+            Expanded(child: Image(image: AssetImage('images/cat2.jpg'))),
+            Expanded(child: Image(image: AssetImage('images/cat3.jpg'))),
+            Expanded(child: Image(image: AssetImage('images/cat4.jpg'))),
+            Expanded(child: Image(image: AssetImage('images/cat5.jpg'))),
+            Expanded(child: Image(image: AssetImage('images/cat6.jpg'))),
+          ],
         ),
-      ),
+
     );
   }
 }
