@@ -19,7 +19,12 @@ class _AboutPageState extends State<AboutPage> {
        body: ListView(
             padding: const EdgeInsets.all(8),
             children: <Widget>[
-            Expanded(child: Image(image: AssetImage('images/cat1.jpg'))),
+            Container(
+              height: 200,
+              color: const Color.fromARGB(255, 18, 45, 200),
+              child: const Image(image: AssetImage('images/cat1.jpg')),
+            ),
+
             Expanded(child: Image(image: AssetImage('images/cat2.jpg'))),
             Expanded(child: Image(image: AssetImage('images/cat3.jpg'))),
             Expanded(child: Image(image: AssetImage('images/cat4.jpg'))),
