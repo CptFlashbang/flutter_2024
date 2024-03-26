@@ -16,41 +16,46 @@ class _AboutPageState extends State<AboutPage> {
       appBar: AppBar(
         title: const Text("About"),
       ),
-       body: ListView(
+       body: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 3,
+        children: <Widget>[
+          Container(
             padding: const EdgeInsets.all(8),
-            children: <Widget>[
-            Container(
-              height: 200,
-              color: const Color.fromARGB(255, 18, 45, 200),
-              child: const Image(image: AssetImage('images/cat1.jpg')),
-            ),
-            Container(
-              height: 200,
-              color: Color.fromARGB(255, 200, 18, 18),
-              child: const Image(image: AssetImage('images/cat2.jpg')),
-            ),
-            Container(
-              height: 200,
-              color: Color.fromARGB(255, 255, 102, 0),
-              child: const Image(image: AssetImage('images/cat3.jpg')),
-            ),
-            Container(
-              height: 200,
-              color: Color.fromARGB(255, 255, 251, 0),
-              child: const Image(image: AssetImage('images/cat4.jpg')),
-            ),
-            Container(
-              height: 200,
-              color: Color.fromARGB(255, 21, 255, 0),
-              child: const Image(image: AssetImage('images/cat5.jpg')),
-            ),
-            Container(
-              height: 200,
-              color: Color.fromARGB(255, 0, 195, 255),
-              child: const Image(image: AssetImage('images/cat6.jpg')),
-            ),
-          ],
-        ),
+            child: Image.asset('images/cat1.jpg'),
+            color: Colors.teal[100],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Image.asset('images/cat2.jpg'),
+            color: Colors.teal[200],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Image.asset('images/cat3.jpg'),
+            color: Colors.teal[300],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Image.asset('images/cat4.jpg'),
+            color: Colors.teal[400],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Image.asset('images/cat5.jpg'),
+            color: Colors.teal[500],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Image.asset('images/cat6.jpg'),
+            color: Colors.teal[600],
+          ),
+        ],
+      )
+
 
     );
   }
