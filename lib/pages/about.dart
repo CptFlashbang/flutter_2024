@@ -21,7 +21,9 @@ class _AboutPageState extends State<AboutPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[ Text("About"),
+          children: const <Widget>[ 
+            Text("About"),
+            Image(image: AssetImage('images/grad.jpg'))
           ],
         ),
       ),
