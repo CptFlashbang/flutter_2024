@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_adv_2/pages/about.dart';
-import 'package:flutter_adv_2/pages/animal.dart';
-import 'package:flutter_adv_2/pages/contact.dart';
-import 'package:flutter_adv_2/pages/home.dart';
+import 'package:flutter_2024/pages/about.dart';
+import 'package:flutter_2024/pages/animal.dart';
+import 'package:flutter_2024/pages/contact.dart';
+import 'package:flutter_2024/pages/home.dart';
 
 
 void main() {
