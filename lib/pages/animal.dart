@@ -10,6 +10,27 @@ class AnimalPage extends StatefulWidget {
   _AnimalPageState createState() => _AnimalPageState();
 }
 
+class PetDetails extends StatelessWidget {
+  final Pet petdetail;
+  const PetDetails({super.key, required this.petdetail});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(petdetail.animalName),
+        ),
+        body: Column(children: [
+          Image.asset(petdetail.animalPic),
+          Text("Name: ${petdetail.animalName}"),
+          Text("Age: ${petdetail.animalAge}"),
+          Text("Type: ${petdetail.animalType}"),
+          Text("Breed: ${petdetail.animalBreed}"),
+        ]));
+  }
+}
+
+
 class _AnimalPageState extends State<AnimalPage> {
 
   @override
