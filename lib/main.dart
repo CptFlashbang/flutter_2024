@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.black45,
+        // selectedItemColor: Colors.red,
+        // unselectedItemColor: Colors.black45,
         onTap: (int index) => setState(() => _currentIndex = index),
         items: [
           for (final tabItem in TabNavigationItem.items)
