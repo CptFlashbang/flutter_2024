@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import "package:flutter_2024/pet.dart";
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
