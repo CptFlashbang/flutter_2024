@@ -4,7 +4,6 @@ import 'package:flutter_2024/pages/animal.dart';
 import 'package:flutter_2024/pages/contact.dart';
 import 'package:flutter_2024/pages/home.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,12 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-        ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 16.0),
-        ),
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
@@ -69,8 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-
 class TabNavigationItem {
   final Widget page;
   final String title;
@@ -83,26 +79,25 @@ class TabNavigationItem {
   });
 
   static List<TabNavigationItem> get items => [
-    TabNavigationItem(
-      page: const HomePage(),
-      icon: const Icon(Icons.home),
-      title: "Home",
-    ),
-    TabNavigationItem(
-      page: const ContactPage(),
-      icon: const Icon(Icons.email),
-      title: "Contact",
-    ),
-    TabNavigationItem(
-      page: const AboutPage(),
-      icon: const Icon(Icons.info),
-      title: "About",
-    ),
-    TabNavigationItem(
-      page: const AnimalPage(),
-      icon: const Icon(Icons.pets),
-      title: "Animals",
-    ),
-  ];
+        TabNavigationItem(
+          page: const HomePage(),
+          icon: const Icon(Icons.home),
+          title: "Home",
+        ),
+        TabNavigationItem(
+          page: const ContactPage(),
+          icon: const Icon(Icons.email),
+          title: "Contact",
+        ),
+        TabNavigationItem(
+          page: const AboutPage(),
+          icon: const Icon(Icons.info),
+          title: "About",
+        ),
+        TabNavigationItem(
+          page: const AnimalPage(),
+          icon: const Icon(Icons.pets),
+          title: "Animals",
+        ),
+      ];
 }
-
