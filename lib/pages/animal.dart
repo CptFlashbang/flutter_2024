@@ -18,13 +18,21 @@ class _AnimalPageState extends State<AnimalPage> {
       appBar: AppBar(
         title: const Text("Animal"),
       ),
-      body: ListView(
-      children: pets.map((petdetail) {
-        return ListTile(
-          title: Text(petdetail.animalName),
-        );
-      }).toList(),
-    )
+            body: ListView(
+          children: pets.map((petdetail) {
+            return ListTile(
+              title: Text(petdetail.animalName),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => PetDetails(
+                    petdetail: petdetail,
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
+        )
+
     );
   }
 }
