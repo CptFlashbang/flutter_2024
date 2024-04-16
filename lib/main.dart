@@ -4,7 +4,6 @@ import 'package:flutter_2024/pages/animal.dart';
 import 'package:flutter_2024/pages/contact.dart';
 import 'package:flutter_2024/pages/home.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,12 +17,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        brightness: Brightness.light,
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
         ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 16.0),
-        ),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        appBarTheme: const AppBarTheme(color: Color(0xFF391B92)),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            selectedItemColor: Colors.deepOrange,
+            backgroundColor: Color(0xFF391B92)),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
@@ -54,8 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.black45,
+        // selectedItemColor: Colors.red,
+        // unselectedItemColor: Colors.black45,
         onTap: (int index) => setState(() => _currentIndex = index),
         items: [
           for (final tabItem in TabNavigationItem.items)
@@ -69,8 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-
 class TabNavigationItem {
   final Widget page;
   final String title;
@@ -83,26 +85,25 @@ class TabNavigationItem {
   });
 
   static List<TabNavigationItem> get items => [
-    TabNavigationItem(
-      page: const HomePage(),
-      icon: const Icon(Icons.home),
-      title: "Home",
-    ),
-    TabNavigationItem(
-      page: const ContactPage(),
-      icon: const Icon(Icons.email),
-      title: "Contact",
-    ),
-    TabNavigationItem(
-      page: const AboutPage(),
-      icon: const Icon(Icons.info),
-      title: "About",
-    ),
-    TabNavigationItem(
-      page: const AnimalPage(),
-      icon: const Icon(Icons.pets),
-      title: "Animals",
-    ),
-  ];
+        TabNavigationItem(
+          page: const HomePage(),
+          icon: const Icon(Icons.home),
+          title: "Home",
+        ),
+        TabNavigationItem(
+          page: const ContactPage(),
+          icon: const Icon(Icons.email),
+          title: "Contact",
+        ),
+        TabNavigationItem(
+          page: const AboutPage(),
+          icon: const Icon(Icons.info),
+          title: "About",
+        ),
+        TabNavigationItem(
+          page: const AnimalPage(),
+          icon: const Icon(Icons.pets),
+          title: "Animals",
+        ),
+      ];
 }
-
