@@ -11,21 +11,20 @@ class AnimalPage extends StatefulWidget {
 }
 
 class _AnimalPageState extends State<AnimalPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Animal"),
       ),
-      body: Container(
-        margin: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[ Text("Animal"),
-          ],
-        ),
-      ),
+      body: ListView(
+      children: pets.map((petdetail) {
+        return ListTile(
+          title: Text(petdetail.animalName),
+        );
+      }).toList(),
+    )
     );
   }
 }
