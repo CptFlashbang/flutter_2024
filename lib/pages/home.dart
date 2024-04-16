@@ -12,6 +12,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    MediaQueryData media;
+    media = MediaQuery.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -22,7 +24,8 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[ Text("Home"),
+          children: const <Widget>[
+            Text("Home"),
           ],
         ),
       ),
