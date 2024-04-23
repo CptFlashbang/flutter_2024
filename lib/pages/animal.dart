@@ -78,3 +78,34 @@ class ListWidget extends StatefulWidget {
   _ListWidgetState createState() => _ListWidgetState();
 }
 
+class _ListWidgetState extends State<ListWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: widget.pets.length,
+      itemBuilder: (context, position) {
+        return Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Card(
+            child: InkWell(
+              onTap: () {
+                widget.onItemSelected(position);
+              },
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Text(
+                      widget.pets[position].animalName,
+                      style: const TextStyle(fontSize: 16.0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
