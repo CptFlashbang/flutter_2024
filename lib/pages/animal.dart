@@ -70,3 +70,11 @@ class _AnimalPageState extends State<AnimalPage> {
   }
 }
 
+class ListWidget extends StatefulWidget {
+  final List<Pet> pets;
+  final ItemSelectedCallback onItemSelected;
+  const ListWidget(this.pets, this.onItemSelected, {super.key});
+  @override
+  _ListWidgetState createState() => _ListWidgetState();
+}
+
