@@ -109,3 +109,33 @@ class _ListWidgetState extends State<ListWidget> {
     );
   }
 }
+
+class DetailWidget extends StatelessWidget {
+  final Pet petdetail;
+
+  const DetailWidget({super.key, required this.petdetail});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+              child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 450),
+                  child: Image.asset(petdetail.animalPic))),
+          Expanded(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                Text("Name: ${petdetail.animalName}"),
+                Text("Age: ${petdetail.animalAge}"),
+                Text("Type: ${petdetail.animalType}"),
+                Text("Breed: ${petdetail.animalBreed}"),
+              ]))
+        ]);
+  }
+}
+
