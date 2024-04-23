@@ -32,28 +32,40 @@ class PetDetails extends StatelessWidget {
 
 
 class _AnimalPageState extends State<AnimalPage> {
+   var isLargeScreen = false;
+  Pet savedPet = pets[0];
 
   @override
   Widget build(BuildContext context) {
+ 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Animal"),
-      ),
-            body: ListView(
-          children: pets.map((petdetail) {
-            return ListTile(
-              title: Text(petdetail.animalName),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => PetDetails(
-                    petdetail: petdetail,
-                  ),
-                ),
-              ),
-            );
-          }).toList(),
-        )
-
-    );
+        appBar: AppBar(
+          title: const Text("Animal"),
+        ),
+        body: OrientationBuilder(builder: (context, orientation) {
+          if (MediaQuery.of(context).size.width > 800) {
+            isLargeScreen = true;
+          } else {
+            isLargeScreen = false;
+          }
+          return Row(children: <Widget>[
+            Expanded(
+              child: ListWidget(pets, (value) {
+                if (isLargeScreen) {
+                  savedPet = pets[value];
+                  setState(() {});
+                } else {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return PetDetails(petdetail: pets[value]);
+                  }));
+                }
+              }),
+            ),
+            isLargeScreen
+                ? Expanded(flex: 2, child: DetailWidget(petdetail: savedPet))
+                : Container()
+          ]);
+        }));
   }
 }
+
